@@ -10,7 +10,7 @@ import random
 # Define constants
 IMG_SIZE = 256
 BATCH_SIZE = 32
-DATA_DIR = 'Dataset'
+DATA_DIR = 'Dataset_segmented_reduced'
 VALID_SPLIT = 0.2
 
 # Define the transformations for training (with augmentation)

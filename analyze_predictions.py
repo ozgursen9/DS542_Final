@@ -19,11 +19,9 @@ def visualize_gradcam_predictions(model, loader, num_samples=3):
         'incorrect_1': []   # Incorrect predictions for class 1
     }
     
-    # Setup GradCAM - removed use_cuda parameter
     target_layers = [model.features[-2]]  # Using the last convolutional layer
     cam = GradCAM(model=model, target_layers=target_layers)
     
-    # Rest of the function remains the same
     with torch.no_grad():
         for images, labels in loader:
             if all(len(samples[key]) >= num_samples for key in samples):
@@ -78,5 +76,4 @@ def visualize_gradcam_predictions(model, loader, num_samples=3):
     plt.tight_layout()
     plt.show()
 
-# Run the visualization
 
